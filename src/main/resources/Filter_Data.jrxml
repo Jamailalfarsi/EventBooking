@@ -2,13 +2,13 @@
 <!-- Created with Jaspersoft Studio version 6.20.1.final using JasperReports Library version 6.20.1-7584acb244139816654f64e2fd57a00d3e31921e  -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Filter_Data" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="6ec0ef16-6856-4a28-a906-360ecad3c8b7">
 
-    <field name="ORDERID" class="java.lang.Integer">
+    <field name="eventName" class="java.lang.String">
 
     </field>
-    <field name="EMPLOYEEID" class="java.lang.Integer">
+    <field name="location" class="java.lang.String">
 
     </field>
-    <field name="CUSTOMERID" class="java.lang.String">
+    <field name="numberOfDate" class="java.lang.Integer">
 
     </field>
     <background>
@@ -84,7 +84,7 @@
                 <textElement>
                     <font size="14"/>
                 </textElement>
-                <textFieldExpression><![CDATA[$F{ORDERID}]]></textFieldExpression>
+                <textFieldExpression><![CDATA[$F{eventName}]]></textFieldExpression>
             </textField>
             <textField textAdjust="StretchHeight">
                 <reportElement x="185" y="0" width="185" height="20" uuid="0447ceb1-f407-4955-9304-6d9d36d94d4f">
@@ -93,7 +93,7 @@
                 <textElement>
                     <font size="14"/>
                 </textElement>
-                <textFieldExpression><![CDATA[$F{EMPLOYEEID}]]></textFieldExpression>
+                <textFieldExpression><![CDATA[$F{location}]]></textFieldExpression>
             </textField>
             <textField textAdjust="StretchHeight">
                 <reportElement x="370" y="0" width="185" height="20" uuid="8f9ebcdf-d4d6-4711-923b-41459d796b28">
@@ -102,7 +102,7 @@
                 <textElement>
                     <font size="14"/>
                 </textElement>
-                <textFieldExpression><![CDATA[$F{CUSTOMERID}]]></textFieldExpression>
+                <textFieldExpression><![CDATA[$F{numberOfDate}]]></textFieldExpression>
             </textField>
         </band>
     </detail>

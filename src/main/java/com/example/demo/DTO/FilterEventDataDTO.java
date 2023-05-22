@@ -10,6 +10,6 @@ import lombok.Setter;
 public class FilterEventDataDTO {
     String eventName;
     String location;
-    String numberOfDate;
+    Integer numberOfDate;
 
 }
