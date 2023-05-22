@@ -1,7 +1,9 @@
 package com.example.demo.mailing.Model;
 
-import java.util.List;
+import lombok.Data;
 
+import java.util.List;
+@Data
 public class EmailDetails {
     private List<String> recipient;
     private String msgBody;
