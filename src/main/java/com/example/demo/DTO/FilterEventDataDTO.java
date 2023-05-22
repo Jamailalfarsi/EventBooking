@@ -1,8 +1,15 @@
 package com.example.demo.DTO;
 
-public class FilterEventData {
+import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
+@Data
+public class FilterEventDataDTO {
     String eventName;
     String location;
     String numberOfDate;
-    
+
 }
