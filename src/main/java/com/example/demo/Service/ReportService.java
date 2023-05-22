@@ -23,8 +23,18 @@ public class ReportService {
     EventRepository eventRepository;
     public static final String pathToReports = "C:\\Users\\user021\\Desktop\\report";
 
-    public String generateReport() throws FileNotFoundException, JRException {
+    public String generateEventReport() throws FileNotFoundException, JRException {
         List<Event> eventList = eventRepository.getAllEvents();
+        List<FilterEventDataDTO> eventDTOList = new ArrayList<>();
+        for (Event evt : eventList) {
+            String eventName = evt.getName();
+            String location = evt.getLocation();
+            Integer numberOfDate = evt.getNumberOfDate();
+
+            FilterEventDataDTO eventDTO = new FilterEventDataDTO(eventName, location, numberOfDate);
+            eventDTOList.add(eventDTO);
+        }
+        
 
         File file = ResourceUtils.getFile("classpath:Filter_Data.jrxml");
         JasperReport jasperReport = JasperCompileManager.compileReport(file.getAbsolutePath());
@@ -36,20 +46,9 @@ public class ReportService {
         return "Report generated : " + pathToReports + "\\events.pdf";
     }
 
-    public String generateEventReport() throws FileNotFoundException, JRException {
-        List<Event> eventList = eventRepository.getAllEvents();
-        List<FilterEventDataDTO> studentDTOList = new ArrayList<>();
-        for (Event evt : eventList) {
-            String eventName = evt.getName();
-            String location = evt.getLocation();
-            Integer numberOfDate = evt.getNumberOfDate();
-
-            FilterEventDataDTO eventDTO = new FilterEventDataDTO(eventName, location, numberOfDate);
-            studentDTOList.add(eventDTO);
-        }
 
 
-    }
+
 
 }
 
