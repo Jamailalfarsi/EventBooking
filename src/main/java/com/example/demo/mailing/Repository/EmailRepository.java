@@ -3,7 +3,7 @@ import com.example.demo.mailing.Model.EmailDetails;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public class EmailRepository {
+public interface  EmailRepository {
     String sendSimpleMailToMany(EmailDetails emailDetails);
     String sendSimpleMail(EmailDetails emailDetails);
     String sendMailWithAttachmentToMany(EmailDetails emailDetails);
