@@ -1,6 +1,7 @@
 package com.example.demo.mailing.Service;
 
 import com.example.demo.mailing.Model.EmailDetails;
+import com.example.demo.mailing.Repository.EmailRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.io.FileSystemResource;
@@ -15,7 +16,7 @@ import java.io.File;
 import java.util.List;
 
 @Service
-public class EmailService {
+public class EmailService implements EmailRepository {
     @Autowired
     private JavaMailSender mailSender;
 
