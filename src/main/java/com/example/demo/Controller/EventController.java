@@ -6,6 +6,7 @@ import com.example.demo.Models.UserRegistration;
 import com.example.demo.Repository.EventRepository;
 import com.example.demo.Service.EventService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -35,6 +36,7 @@ public class EventController {
         Event event = eventService.getByEventName(name);
         return event;
     }
+
     @RequestMapping(value = "getAll",method = RequestMethod.GET)
     public List<Event> getAllEvents(){
         List<Event> eventList = eventService.getAllEvents();
@@ -45,5 +47,6 @@ public class EventController {
         Event event = eventService.getBEventById(id);
         return event;
     }
+
 
 }
