@@ -9,7 +9,7 @@
 
     </field>
     <field name="CUSTOMERID" class="java.lang.String">
-       
+
     </field>
     <background>
         <band/>
