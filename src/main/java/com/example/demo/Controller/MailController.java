@@ -14,6 +14,8 @@ public class MailController {
     @Autowired
     EmailService emailService;
 
+    // Sending a simple Email
+    @PostMapping("/sendMail")
     public String sendMail(@RequestBody EmailDetails details) {
         String status = emailService.sendSimpleMail(details);
 
