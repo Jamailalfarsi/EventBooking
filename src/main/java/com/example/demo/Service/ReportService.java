@@ -1,8 +1,10 @@
 package com.example.demo.Service;
 
 import com.example.demo.Models.Event;
+import com.example.demo.Repository.EventRepository;
 import net.sf.jasperreports.engine.*;
 import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.ResourceUtils;
 
@@ -14,10 +16,13 @@ import java.util.Map;
 
 @Service
 public class ReportService {
+
+    @Autowired
+    EventRepository eventRepository;
     public static final String pathToReports = "C:\\Users\\user021\\Desktop\\report";
 
     public String generateReport() throws FileNotFoundException, JRException {
-        List<Event> eventList = eventRepository.getAllSchools();
+        List<Event> eventList = eventRepository.getAllEvents();
 
         File file = ResourceUtils.getFile("classpath:School_management.jrxml");
         JasperReport jasperReport = JasperCompileManager.compileReport(file.getAbsolutePath());
