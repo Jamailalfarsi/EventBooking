@@ -11,5 +11,6 @@ import org.springframework.web.bind.annotation.RestController;
 public class MailController {
     @Autowired
     EmailService emailService;
-    @PostMapping("/sendMail")
+   
+
 }
