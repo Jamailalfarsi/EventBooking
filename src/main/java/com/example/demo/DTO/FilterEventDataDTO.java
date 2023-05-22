@@ -12,4 +12,12 @@ public class FilterEventDataDTO {
     String location;
     Integer numberOfDate;
 
+    public FilterEventDataDTO(String eventName, String location, Integer numberOfDate) {
+        this.eventName = eventName;
+        this.location = location;
+        this.numberOfDate = numberOfDate;
+    }
+
+
+
 }

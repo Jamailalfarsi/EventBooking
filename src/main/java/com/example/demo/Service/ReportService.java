@@ -26,7 +26,7 @@ public class ReportService {
     public String generateReport() throws FileNotFoundException, JRException {
         List<Event> eventList = eventRepository.getAllEvents();
 
-        File file = ResourceUtils.getFile("classpath:School_management.jrxml");
+        File file = ResourceUtils.getFile("classpath:Filter_Data.jrxml");
         JasperReport jasperReport = JasperCompileManager.compileReport(file.getAbsolutePath());
         JRBeanCollectionDataSource dataSource = new JRBeanCollectionDataSource(eventList);
         Map<String, Object> paramters = new HashMap<>();
@@ -35,6 +35,7 @@ public class ReportService {
         JasperExportManager.exportReportToPdfFile(jasperPrint, pathToReports + "\\events.pdf");
         return "Report generated : " + pathToReports + "\\events.pdf";
     }
+
     public String generateEventReport() throws FileNotFoundException, JRException {
         List<Event> eventList = eventRepository.getAllEvents();
         List<FilterEventDataDTO> studentDTOList = new ArrayList<>();
@@ -45,14 +46,11 @@ public class ReportService {
 
             FilterEventDataDTO eventDTO = new FilterEventDataDTO(eventName, location, numberOfDate);
             studentDTOList.add(eventDTO);
-
         }
 
 
-
-
-
-
-
-
     }
+
+}
+
+
